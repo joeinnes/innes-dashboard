@@ -5,13 +5,17 @@
 	"scripts": {
 		"dev": "vite dev --host",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "vite preview --host",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@event-calendar/core": "^2.3.3",
+		"@event-calendar/time-grid": "^2.3.3",
+		"@skeletonlabs/skeleton": "^2.2.0",
+		"@skeletonlabs/tw-plugin": "^0.2.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"autoprefixer": "^10.4.16",
@@ -19,6 +23,7 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
+		"ical": "^0.8.0",
 		"postcss": "^8.4.31",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",

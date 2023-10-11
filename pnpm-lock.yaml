@@ -5,6 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@event-calendar/core':
+    specifier: ^2.3.3
+    version: 2.3.3
+  '@event-calendar/time-grid':
+    specifier: ^2.3.3
+    version: 2.3.3
+  '@skeletonlabs/skeleton':
+    specifier: ^2.2.0
+    version: 2.2.0(svelte@4.2.1)
+  '@skeletonlabs/tw-plugin':
+    specifier: ^0.2.1
+    version: 0.2.1(tailwindcss@3.3.3)
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
     version: 2.1.0(@sveltejs/kit@1.25.1)
@@ -26,6 +38,9 @@ devDependencies:
   eslint-plugin-svelte:
     specifier: ^2.30.0
     version: 2.34.0(eslint@8.50.0)(svelte@4.2.1)
+  ical:
+    specifier: ^0.8.0
+    version: 0.8.0
   postcss:
     specifier: ^8.4.31
     version: 8.4.31
@@ -309,6 +324,19 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@event-calendar/core@2.3.3:
+    resolution: {integrity: sha512-hp56uxo7trieqjUVhxmCRslDrE8sbcr3V8ZK+YNA1jMaNW4/U6JpujNeewFBpB64SUV666rVlITINGjIKsPZsw==}
+    dependencies:
+      svelte: 4.2.1
+    dev: true
+
+  /@event-calendar/time-grid@2.3.3:
+    resolution: {integrity: sha512-BA0VDKczkHDUDZpBcm0rtd/axInwB9UmnITEgS4jM/tn3sOgLuQaJ1qGgvfO5NYWfS/DlSydDgm+3mKpP6qXWg==}
+    dependencies:
+      '@event-calendar/core': 2.3.3
+      svelte: 4.2.1
+    dev: true
+
   /@fastify/busboy@2.0.0:
     resolution: {integrity: sha512-JUFJad5lv7jxj926GPgymrWQxxjPYuJNiNjNMzqT+HiuP6Vl3dk5xzG+8sTX96np0ZAluvaMzPsjhHZ5rNuNQQ==}
     engines: {node: '>=14'}
@@ -387,6 +415,23 @@ packages:
 
   /@polka/url@1.0.0-next.23:
     resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
+    dev: true
+
+  /@skeletonlabs/skeleton@2.2.0(svelte@4.2.1):
+    resolution: {integrity: sha512-pSi1yeZo1tsGnMqbBeTfTxfEqcZUM1n9RT/7KQVSiBcENB9L0kesbkv5TlZhW6MxOwf0QRVfkaeCc5ymz4/OHw==}
+    peerDependencies:
+      svelte: ^3.56.0 || ^4.0.0
+    dependencies:
+      esm-env: 1.0.0
+      svelte: 4.2.1
+    dev: true
+
+  /@skeletonlabs/tw-plugin@0.2.1(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-F4Eq/0bxUOlhzgxU6zQJCMSe+cYJcN8HyjuG46mspNuOlSEc2CWgkjqgO/bHwkDBaQb66eQZsEFsfE11cd/PuA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0'
+    dependencies:
+      tailwindcss: 3.3.3
     dev: true
 
   /@sveltejs/adapter-auto@2.1.0(@sveltejs/kit@1.25.1):
@@ -1092,6 +1137,12 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: true
 
+  /ical@0.8.0:
+    resolution: {integrity: sha512-/viUSb/RGLLnlgm0lWRlPBtVeQguQRErSPYl3ugnUaKUnzQswKqOG3M8/P1v1AB5NJwlHTuvTq1cs4mpeG2rCg==}
+    dependencies:
+      rrule: 2.4.1
+    dev: true
+
   /ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
@@ -1247,6 +1298,12 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /luxon@1.28.1:
+    resolution: {integrity: sha512-gYHAa180mKrNIUJCbwpmD0aTu9kV0dREDrwNnuyFAsO1Wt0EVYSZelPnJlbj9HplzXX/YWXHFTL45kvZ53M0pw==}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /magic-string@0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
@@ -1647,6 +1704,12 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
+
+  /rrule@2.4.1:
+    resolution: {integrity: sha512-+NcvhETefswZq13T8nkuEnnQ6YgUeZaqMqVbp+ZiFDPCbp3AVgQIwUvNVDdMNrP05bKZG9ddDULFp0qZZYDrxg==}
+    optionalDependencies:
+      luxon: 1.28.1
     dev: true
 
   /run-parallel@1.2.0:
