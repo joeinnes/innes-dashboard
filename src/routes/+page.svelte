@@ -23,7 +23,6 @@
 	let blink = true;
 	let toSkip = weather.hourly.time.findIndex((el) => el * 1000 > date.valueOf()) - 1;
 	let lastUpdated = new Date().valueOf();
-
 	onMount(() => {
 		const interval = setInterval(() => {
 			date = new Date();

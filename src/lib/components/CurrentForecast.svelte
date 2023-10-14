@@ -23,7 +23,6 @@
 	let nextRainTime = nextRainIndex > -1 ? hourly.time[nextRainIndex] : null;
 	let nextRainDayJs = nextRainTime ? dayjs(nextRainTime * 1000) : null;
 
-	console.log({ hourly, next12Hours, nextRainIndex, nextRainTime });
 	/** @param {number} weatherCode */
 	function isRain(weatherCode) {
 		const rainCodes = [
