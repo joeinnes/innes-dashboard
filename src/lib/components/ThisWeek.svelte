@@ -9,6 +9,7 @@
 	dayjs.extend(isoWeek);
 	const { calendar } = $page.data;
 	export let date = new Date();
+	console.log(calendar);
 </script>
 
 <h2 class="h5 font-bold">This Week (W{dayjs().isoWeek()})</h2>

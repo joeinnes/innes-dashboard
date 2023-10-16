@@ -18,7 +18,7 @@
 	let date = new Date();
 	let greeting = 'Good morning!';
 	export let data;
-	const { weather, calendar } = data;
+	const { weather } = data;
 
 	let refreshCounter = 0;
 	let blink = true;
