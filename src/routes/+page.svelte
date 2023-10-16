@@ -18,7 +18,8 @@
 	let date = new Date();
 	let greeting = 'Good morning!';
 	export let data;
-	const { weather } = data;
+	const { weather, calendar } = data;
+
 	let refreshCounter = 0;
 	let blink = true;
 	let toSkip = weather.hourly.time.findIndex((el) => el * 1000 > date.valueOf()) - 1;

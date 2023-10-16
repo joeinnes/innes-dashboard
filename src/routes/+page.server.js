@@ -42,8 +42,8 @@ export async function load({ fetch, cookies }) {
 			const event = data[keys[0]];
 			return {
 				summary: event.summary,
-				start: event.start,
-				end: event.end,
+				start: dayjs(event.start).toISOString(),
+				end: dayjs(event.end).toISOString(),
 				location: event.location,
 				rrule: event.rrule,
 				allDay: !!event.start?.dateOnly
