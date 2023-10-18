@@ -3,6 +3,12 @@ import { createDAVClient } from 'tsdav';
 import ical from 'ical';
 import { error } from '@sveltejs/kit';
 
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, cookies }) {
 	try {
@@ -42,8 +48,8 @@ export async function load({ fetch, cookies }) {
 			const event = data[keys[0]];
 			return {
 				summary: event.summary,
-				start: dayjs(event.start).toISOString(),
-				end: dayjs(event.end).toISOString(),
+				start: dayjs.tz(event.start, event?.start?.tz).toISOString(),
+				end: dayjs.tz(event.end, event?.end?.tz).toISOString(),
 				location: event.location,
 				rrule: event.rrule,
 				allDay: !!event.start?.dateOnly

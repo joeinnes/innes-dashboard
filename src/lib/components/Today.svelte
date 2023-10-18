@@ -50,13 +50,19 @@
 		{/each}
 	</div>
 	<div class="day flex-grow overflow-y-scroll relative" bind:this={dayEl}>
-		<div class="bg-red-500 h-[2px] w-full absolute z-10" style="top: {nowTop}px" bind:this={nowEl}>
+		{#key nowTop}
 			<div
-				class="absolute rounded-full px-1 -translate-y-1/2 right-0 bg-red-500 text-white text-xs"
+				class="bg-red-500 h-[2px] w-full absolute z-10"
+				style="top: {nowTop}px"
+				bind:this={nowEl}
 			>
-				{now.format('HH:mm')}
+				<div
+					class="absolute rounded-full px-1 -translate-y-1/2 right-0 bg-red-500 text-white text-xs"
+				>
+					{now.format('HH:mm')}
+				</div>
 			</div>
-		</div>
+		{/key}
 		{#each [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23] as hour}
 			<div class="h-8 flex">
 				<div class="label">{hour || ''}</div>
