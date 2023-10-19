@@ -9,6 +9,15 @@ import timezone from 'dayjs/plugin/timezone';
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
+/** @typedef {{
+ * summary: string,
+ * start: string,
+ * end: string,
+ * location: string,
+ * rrule: string,
+ * allDay: boolean
+ * }} CalEntry */
+
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, cookies }) {
 	try {
@@ -42,16 +51,17 @@ export async function load({ fetch, cookies }) {
 			}
 		});
 
+		/** @type CalEntry[] */
 		const calendar = events.map((el) => {
 			const data = ical.parseICS(el.data);
 			const keys = Object.keys(data);
 			const event = data[keys[0]];
 			return {
-				summary: event.summary,
-				start: dayjs.tz(event.start, event?.start?.tz).toISOString(),
-				end: dayjs.tz(event.end, event?.end?.tz).toISOString(),
-				location: event.location,
-				rrule: event.rrule,
+				summary: event.summary || '',
+				start: dayjs.tz(event.start, event?.start?.tz).toISOString() || '',
+				end: dayjs.tz(event.end, event?.end?.tz).toISOString() || '',
+				location: event.location || '',
+				rrule: event.rrule || '',
 				allDay: !!event.start?.dateOnly
 			};
 		});
