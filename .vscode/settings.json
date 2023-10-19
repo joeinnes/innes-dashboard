@@ -1,3 +1,6 @@
 {
-  "conventionalCommits.scopes": ["today"]
+  "conventionalCommits.scopes": [
+    "today",
+    "favicon"
+  ]
 }
