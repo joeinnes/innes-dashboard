@@ -4,9 +4,14 @@
   import dayjs from 'dayjs';
   import relativeTime from 'dayjs/plugin/relativeTime';
   import isoWeek from 'dayjs/plugin/isoWeek';
+  import utc from 'dayjs/plugin/utc';
+  import timezone from 'dayjs/plugin/timezone';
 
   dayjs.extend(relativeTime);
   dayjs.extend(isoWeek);
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  
   const { calendar } = /** @type {{ calendar: App.CalEntry[] }} */ ($page.data);
   export let date = new Date();
 </script>
@@ -19,7 +24,7 @@
       return day.isSame(dayjs(el.start), 'day');
     })
     .sort((a, b) => {
-      return dayjs(a.start).unix() > dayjs(b.start).unix() ? 1 : -1;
+      return dayjs.utc(a.start).unix() > dayjs.utc(b.start).unix() ? 1 : -1;
     })}
   {#if events.length}
     <div>
@@ -30,7 +35,7 @@
         {#each events as event}
           <li>
             {#if !event.allDay}
-              {dayjs(event.start).format('HH:mm')}{#if event.end}-{dayjs(event.end).format(
+              {dayjs.utc(event.start).format('HH:mm')}{#if event.end}-{dayjs.utc(event.end).format(
                   'HH:mm'
                 )}{/if} -
             {/if}{event.summary}
