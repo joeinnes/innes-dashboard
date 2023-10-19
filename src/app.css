@@ -3,26 +3,25 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Avenir Next';
-    background-color:#99b9ff;
-    background-image:
-        radial-gradient(at 93% 95%, hsla(103,76%,77%,1) 0px, transparent 50%),
-        radial-gradient(at 48% 40%, hsla(164,82%,63%,1) 0px, transparent 50%),
-        radial-gradient(at 53% 94%, hsla(77,96%,70%,1) 0px, transparent 50%),
-        radial-gradient(at 4% 51%, hsla(306,85%,77%,1) 0px, transparent 50%),
-        radial-gradient(at 11% 59%, hsla(188,60%,77%,1) 0px, transparent 50%),
-        radial-gradient(at 35% 9%, hsla(51,75%,75%,1) 0px, transparent 50%),
-        radial-gradient(at 76% 37%, hsla(242,70%,73%,1) 0px, transparent 50%);
+  font-family: 'Avenir Next';
+  background-color: #99b9ff;
+  background-image: radial-gradient(at 93% 95%, hsla(103, 76%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 48% 40%, hsla(164, 82%, 63%, 1) 0px, transparent 50%),
+    radial-gradient(at 53% 94%, hsla(77, 96%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 4% 51%, hsla(306, 85%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 11% 59%, hsla(188, 60%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 35% 9%, hsla(51, 75%, 75%, 1) 0px, transparent 50%),
+    radial-gradient(at 76% 37%, hsla(242, 70%, 73%, 1) 0px, transparent 50%);
 }
 
 html {
-    --rain-colour: #7dd3fc;
+  --rain-colour: #7dd3fc;
 }
 html.dark {
-    --rain-colour: #2c799c;
+  --rain-colour: #2c799c;
 }
 
 .card {
-    background: rgba(var(--color-surface-200) / 0.6);
-    @apply backdrop-blur-sm;
+  background: rgba(var(--color-surface-200) / 0.6);
+  @apply backdrop-blur-sm;
 }
